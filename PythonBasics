@@ -25,8 +25,9 @@ language the terminal will use to read the file for when we have completed our s
 
 a #! line will look as follows
 
+{
 #! /bin/env/python
-
+}
 ^^^ This will be the first line of code for our script
 after this we can begin coding in earnest.
 
@@ -41,7 +42,17 @@ as it is one of the most supported languages available.
 for more information on libraries and what is availible to you please visit
 https://docs.python.org/3/
 
-in order to make use of libraries it will look 
+in order to make use of libraries it will look this
 
+{
+#! /bin/env/python
+include subprocess
+}
+
+Subprocess is a library for python thay will allow the coder to use system commands available in the terminal in the python script itself. This 
+can be extreamly helpfull especially if we are developing a script.
+
+Now that we have been introduced to python and understand how to start lets jump over to our code example mac_changer.py and take a look through it and break it
+down before we begin coding ourselves.
 
 
