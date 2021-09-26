@@ -52,7 +52,7 @@ include subprocess
 Subprocess is a library for python thay will allow the coder to use system commands available in the terminal in the python script itself. This 
 can be extreamly helpfull especially if we are developing a script.
 
-Now that we have been introduced to python and understand how to start lets jump over to our code example mac_changer.py and take a look through it and break it
+Now that we have been introduced to python and understand how to start lets jump over to our code example macChanger.py and take a look through it and break it
 down before we begin coding ourselves.
 
 
