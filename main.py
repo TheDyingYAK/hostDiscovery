@@ -5,7 +5,7 @@ import sys
 from os import name
 
 
-import netaddr
+import netaddr #Install using 'pip install netaddr'
 
 
 #Implement MAC Spoofer, Implement exception handling, implement input validation, Implement linux support
