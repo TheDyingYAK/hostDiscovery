@@ -7,8 +7,8 @@ from os import name
 
 import netaddr #Install using 'pip install netaddr'
 
-
-#Implement MAC Spoofer, Implement exception handling, implement input validation, Implement linux support
+#Coded in python3
+#Implement MAC Spoofer, Implement exception handling, implement input validation, Implement linux support FIX VM SUPPORT FOR LINE 14 (Check Netaddr documentation to see if I need to use gateway as constructor, or if I can use local ip)
 
 def main():
     objIP = netaddr.IPNetwork(subprocess.getoutput('ipconfig | findstr /i "Gateway')[39:]) #Creates the objIP Object with the default gateway as a constructor. We get the default gate way using the output of subprocess.getoutput and use string splicing to correct the output
