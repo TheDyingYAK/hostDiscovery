@@ -18,7 +18,7 @@ def main():
 
 
 def menu(objIP: netaddr.IPNetwork): #Function declaration taking objIP as a IPNetwork for a parameter
-    foo = input('\nWhat would you like to do?\n1.) Update ARP Table (May take some time)\n2.) Display ARP Table in Network\n3.) Exit\n') #Requesting input
+    foo = input('\nWhat would you like to do?\n1.) Ran a ping sweep (May take some time)\n2.) Display ARP Table in Network\n3.) Exit\n') #Requesting input
 
     if foo.isdigit(): #Checking if the input is a digit
         foo = int(foo) #If it is convert from string to int
@@ -31,6 +31,8 @@ def menu(objIP: netaddr.IPNetwork): #Function declaration taking objIP as a IPNe
         getARPTable(objIP) #Function call to getARPTable with objIP as a parameter
     elif foo == 3:
         sys.exit(0) #Exits program with error code 0
+    elif foo == 4:
+        pingsweep2()
 
 
 def getNetInfo(objIP: netaddr.IPNetwork): #Function declaration taking objIP as a IPNetwork for a parameter
@@ -60,5 +62,18 @@ def getARPTable(objIP: netaddr.IPNetwork): #Function declaration taking objIP as
     for baz in arpTable: #For each IP in the table
         print(baz) #Print out all the info
 
-
+def pingsweep2(): #Work here
+    cmdping = "ping -c 1 10.10.10."
+    ding = open('out.txt', 'a')
+    for x in range(2, 255):
+        p = subprocess.Popen(cmdping + str(x), shell=True, stderr=subprocess.PIPE)
+    while True:
+        out = p.stderr.read(1)
+        if out == '' and p.poll() != None:
+            break
+        if out != '':
+            ding.write(str(out))
+            sys.stdout.write(str(out))
+            sys.stdout.flush()
+    ding.close()
 main() #Calls main
